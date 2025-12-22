@@ -3,24 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>升學刷題王</title>
-    <style>
-        body { font-family: "Microsoft JhengHei", sans-serif; text-align: center; padding: 50px; }
-        .hero { background-color: #f0f2f6; padding: 60px 20px; border-radius: 20px; }
-        .btn {
-            background-color: #ff4b4b; color: white; padding: 15px 30px;
-            text-decoration: none; font-size: 20px; border-radius: 8px;
-            font-weight: bold; display: inline-block; margin-top: 20px;
+    <title>刷題機 Shuati - 你的 AI 隨身家教 | 國中會考、高中學測、分科測驗首選</title>
+
+    <meta name="description" content="刷題機 (Shuati) 是專為國中會考、高中學測、分科測驗設計的 AI 刷題平台。拒絕無效刷題，透過 AI 即時解析、戰力雷達圖分析與遊戲化學習，讓備考變得高效又有趣。">
+    <meta name="keywords" content="國中會考, 高中學測, 高中分科測驗, 歷屆試題, 考古題, AI 家教, 線上刷題, 錯題本, 學習歷程, 刷題機">
+    <meta property="og:title" content="刷題機 Shuati - 你的 AI 隨身家教">
+    <meta property="og:description" content="拒絕無效刷題。AI 即時解析、戰力圖表分析、遊戲化學習，讓備考不再枯燥。">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Shuati+AI+Tutor">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#007bff',
+                            darkblue: '#0056b3',
+                            orange: '#ff8c00',
+                            light: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
         }
-        .btn:hover { background-color: #ff3333; }
+    </script>
+
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#007bff 0.5px, transparent 0.5px), radial-gradient(#007bff 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phone-mockup {
+            border: 14px solid #333;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #333;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
-<body>
-    <div class="hero">
-        <h1>升學刷題王</h1>
-        <p>AI 賦能的專業刷題平台，幫助您克服考試焦慮。</p>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
 
-        <a href="https://shuati.streamlit.app" class="btn">🚀 立即開始刷題</a>
-    </div>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-black tracking-tighter text-gray-900 flex items-center gap-2">
+                        <span class="text-3xl">🚀</span> 刷題機
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">功能特色</a>
+                    <a href="#comparison" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">AI 解析</a>
+                    <a href="#gamification" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">遊戲化</a>
+                    <a href="https://shuati.streamlit.app/" target="_blank" class="bg-brand-blue hover:bg-brand-darkblue text-white px-6 py-2 rounded-full font-bold text-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        開始刷題
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <a href="https://shuati.streamlit.app/" target="_blank" class="text-brand-blue font-bold border border-brand-blue px-4 py-2 rounded-full">
+                        開始使用
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 hero-pattern z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 border border-blue-100 text-brand-blue font-bold text-sm tracking-wide uppercase">
+                        ✨ 2025 備考黑科技
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                        你的 <span class="gradient-text">AI 隨身家教</span><br>
+                        備考不再孤單。
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed font-medium">
+                        專為 <strong>國中會考</strong>、<strong>高中學測</strong>、<strong>分科測驗</strong> 量身打造。<br>
+                        拒絕無效刷題，透過戰力圖表與 AI 光速解析，<br class="hidden lg:block">幫你精準抓出盲點，把讀書變遊戲！
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://shuati.streamlit.app/" target="_blank" class="bg-brand-blue hover:bg-brand-darkblue text-white text-xl px-8 py-4 rounded-xl font-bold transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            🚀 免費開始刷題
+                        </a>
+                        <a href="#comparison" class="bg-white border-2 border-gray-200 hover:border-brand-blue text-gray-700 hover:text-brand-blue text-xl px-8 py-4 rounded-xl font-bold transition flex items-center justify-center">
+                            查看 AI 解析範例
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-400">🔥 封測期間完全免費 | 無需綁定信用卡</p>
+                </div>
+
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/20 rounded-full blur-3xl -z-10"></div>
+                    <img src="https://via.placeholder.com/800x800?text=Robot+Hero+Image" alt="刷題機 AI 機器人" class="w-full max-w-lg mx-auto drop-shadow-2xl animate-float">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">為什麼學霸都愛用？<br>因為詳解真的 <span class="text-brand-blue">不一樣</span>。</h2>
+                <p class="text-2xl text-gray-600 font-medium">別的題庫只給你「答案」，我們給你「理解」。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm opacity-70 grayscale-[50%] hover:grayscale-0 transition duration-300">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-4xl">🥱</span>
+                        <h3 class="text-2xl font-bold text-gray-500">傳統題庫詳解</h3>
+                    </div>
+                    <div class="space-y-4 font-mono text-lg text-gray-600 bg-gray-50 p-6 rounded-xl leading-relaxed">
+                        <p><strong>題目：</strong>關於光合作用...</p>
+                        <p class="text-red-500 font-bold">你的答案：A (錯誤)</p>
+                        <div class="border-t border-gray-200 my-4"></div>
+                        <p><strong>正確答案：</strong>B</p>
+                        <p><strong>解析：</strong>詳見課本第三章 P.125。</p>
+                        <p>（...沒了？為什麼 A 錯？完全沒講 🤷‍♂️）</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border-2 border-brand-blue shadow-2xl transform md:-translate-y-4 relative">
+                    <div class="absolute -top-5 right-8 bg-brand-orange text-white px-6 py-2 rounded-full text-lg font-bold shadow-md">
+                        🏆 AI 導師模式
+                    </div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-4xl">🤖</span>
+                        <h3 class="text-2xl font-bold text-gray-900">刷題機 AI 解析</h3>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-inner border border-gray-100">
+                        <img src="https://via.placeholder.com/600x400?text=Real+AI+Explanation" alt="AI 解析示範" class="w-full">
+                    </div>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-green-100 text-green-700 p-2 rounded text-xl">✅</div>
+                            <p class="text-gray-800 text-lg leading-relaxed"><strong>觀念拆解：</strong>不只給答案，AI 會像家教一樣先拆解題幹關鍵字。</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-blue-100 text-blue-700 p-2 rounded text-xl">🔍</div>
+                            <p class="text-gray-800 text-lg leading-relaxed"><strong>選項分析：</strong>清楚告訴你其他選項錯在哪裡，掃除所有盲點。</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-yellow-100 text-yellow-700 p-2 rounded text-xl">💡</div>
+                            <p class="text-gray-800 text-lg leading-relaxed"><strong>記憶口訣：</strong>提供好記的口訣或延伸知識，讓你舉一反三。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gamification" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full blur-[100px] opacity-20"></div>
+                        <img src="https://via.placeholder.com/800x600?text=Evolution+Graphic" alt="角色進化" class="relative z-10 w-full drop-shadow-xl rounded-2xl">
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-8">
+                        讀書像打怪，<br>越刷越 <span class="text-brand-orange">上癮</span>。
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                        誰說備考只能枯燥乏味？在刷題機，每一次練習都是累積。看著你的 AI 夥伴從一顆蛋進化成守護神，你的實力也同步升級！
+                    </p>
+                    <ul class="space-y-8">
+                        <li class="flex items-center gap-5">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">🐣</div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-gray-900 mb-1">角色養成系統</h4>
+                                <p class="text-lg text-gray-500">累積 XP 經驗值，解鎖不同型態的 AI 夥伴。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-5">
+                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">🏆</div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-gray-900 mb-1">成就獎盃櫃</h4>
+                                <p class="text-lg text-gray-500">「連勝狂人」、「博學多聞」，收集徽章證明你的努力。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-5">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">🔥</div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-gray-900 mb-1">連勝挑戰</h4>
+                                <p class="text-lg text-gray-500">每天刷題保持連勝，培養不間斷的學習習慣。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">拒絕無效刷題，<span class="text-brand-blue">數據</span> 幫你抓弱點</h2>
+                <p class="text-2xl text-gray-600 font-medium">不要用戰術上的勤奮，掩蓋戰略上的懶惰。<br>五維分析，直擊弱項。</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 border border-gray-100">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">📊 視覺化學習歷程</h3>
+                        <p class="text-gray-600 mb-8 text-xl leading-relaxed">
+                            透過最新的<strong>「學習熱力圖」</strong>檢視你的堅持，利用<strong>「戰力雷達圖」</strong>找出你的弱科。
+                            <br><br>
+                            我們不只記錄你做對了幾題，更幫你分析：
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-2xl">
+                                <p class="font-bold text-brand-blue text-2xl mb-2">🕸️ 弱點偵測</p>
+                                <p class="text-lg text-gray-600">哪一科偏弱？一目了然。</p>
+                            </div>
+                            <div class="bg-green-50 p-6 rounded-2xl">
+                                <p class="font-bold text-green-600 text-2xl mb-2">📈 成長軌跡</p>
+                                <p class="text-lg text-gray-600">看見每天的進步，建立信心。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <img src="https://via.placeholder.com/800x500?text=Data+Dashboard+Screenshot" alt="學習數據儀表板" class="w-full rounded-xl shadow-lg border border-gray-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center">
+                    <div class="phone-mockup w-[320px] h-[650px] bg-gray-100 flex items-center justify-center">
+                        <div class="phone-notch"></div>
+                        <img src="https://via.placeholder.com/320x650?text=Mobile+App" alt="手機版介面" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-8">
+                        碎片時間，<br>就是你的 <span class="text-brand-blue">超車時間</span>。
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                        公車上、下課十分鐘、睡前五分鐘。無需厚重的參考書，拿起手機就能刷兩題。
+                        <br><br>
+                        完美支援 <strong>手機、平板、電腦</strong>，隨時隨地，想刷就刷。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 font-bold text-lg">📱 手機版最佳化</span>
+                        <span class="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 font-bold text-lg">⚡ 極速載入</span>
+                        <span class="px-6 py-3 bg-gray-100 rounded-xl text-gray-700 font-bold text-lg">🌙 護眼模式</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-blue text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-4xl lg:text-6xl font-black mb-10">準備好開始進化了嗎？</h2>
+            <p class="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                現在加入封測，立即領取你的專屬 AI 夥伴。收錄歷屆學測、會考、分科測驗試題，完全免費。
+            </p>
+            <a href="https://shuati.streamlit.app/" target="_blank" class="bg-white text-brand-blue text-2xl px-12 py-6 rounded-full font-black shadow-2xl hover:bg-gray-50 hover:scale-105 transition duration-300 inline-flex items-center gap-4">
+                <span class="text-3xl">🚀</span> 立即註冊 (免費)
+            </a>
+            <p class="mt-8 text-base text-blue-200 opacity-80">Join 500+ students learning smarter today.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-white text-xl font-bold mb-2">🚀 刷題機 Shuati</h3>
+                <p class="text-base">你的 AI 隨身家教，陪你戰勝每一場考試。</p>
+            </div>
+            <div class="flex gap-8 text-base">
+                <a href="#" class="hover:text-white transition">關於我們</a>
+                <a href="#" class="hover:text-white transition">隱私權政策</a>
+                <a href="mailto:contact@shuati.tw" class="hover:text-white transition">聯絡我們</a>
+            </div>
+            <div class="text-sm text-gray-600">
+                &copy; 2025 Shuati AI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
