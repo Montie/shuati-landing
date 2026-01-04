@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>刷題機 Shuati - 你的 AI 隨身家教 | 國中會考、高中學測、分科測驗首選</title>
 
-    <meta name="description" content="刷題機 (Shuati) 是專為國中會考、高中學測、分科測驗設計的 AI 刷題平台。拒絕無效刷題，透過 AI 即時解析、戰力雷達圖分析與遊戲化學習，讓備考變得高效又有趣。">
+    <meta name="description"
+        content="刷題機 (Shuati) 是專為國中會考、高中學測、分科測驗設計的 AI 刷題平台。拒絕無效刷題，透過 AI 即時解析、戰力雷達圖分析與遊戲化學習，讓備考變得高效又有趣。">
     <meta name="keywords" content="國中會考, 高中學測, 高中分科測驗, 歷屆試題, 考古題, AI 家教, 線上刷題, 錯題本, 學習歷程, 刷題機">
     <meta property="og:title" content="刷題機 Shuati - 你的 AI 隨身家教">
     <meta property="og:description" content="拒絕無效刷題。AI 即時解析、戰力圖表分析、遊戲化學習，讓備考不再枯燥。">
@@ -15,7 +17,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -38,7 +41,10 @@
     </script>
 
     <style>
-        body { font-family: 'Noto Sans TC', sans-serif; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
         .hero-pattern {
             background-color: #ffffff;
             background-image: radial-gradient(#007bff 0.5px, transparent 0.5px), radial-gradient(#007bff 0.5px, #ffffff 0.5px);
@@ -46,11 +52,13 @@
             background-position: 0 0, 10px 10px;
             opacity: 0.1;
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .phone-mockup {
             border: 14px solid #333;
             border-radius: 40px;
@@ -59,6 +67,7 @@
             background: white;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
         .phone-notch {
             position: absolute;
             top: 0;
@@ -71,16 +80,27 @@
             border-bottom-right-radius: 12px;
             z-index: 10;
         }
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
+
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
+
 <body class="bg-white text-gray-800 antialiased overflow-x-hidden">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
@@ -92,16 +112,22 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">功能特色</a>
-                    <a href="#comparison" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">AI 解析</a>
-                    <a href="#gamification" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">遊戲化</a>
-                    <a href="#community" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">社群互動</a>
-                    <a href="https://shuati.streamlit.app/" target="_blank" class="bg-brand-blue hover:bg-brand-darkblue text-white px-6 py-2 rounded-full font-bold text-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <a href="#features"
+                        class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">功能特色</a>
+                    <a href="#comparison" class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">AI
+                        解析</a>
+                    <a href="#gamification"
+                        class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">遊戲化</a>
+                    <a href="#community"
+                        class="text-gray-600 hover:text-brand-blue font-bold text-lg transition">社群互動</a>
+                    <a href="https://shuati.streamlit.app/" target="_blank"
+                        class="bg-brand-blue hover:bg-brand-darkblue text-white px-6 py-2 rounded-full font-bold text-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                         開始刷題
                     </a>
                 </div>
                 <div class="md:hidden">
-                    <a href="https://shuati.streamlit.app/" target="_blank" class="text-brand-blue font-bold border border-brand-blue px-4 py-2 rounded-full">
+                    <a href="https://shuati.streamlit.app/" target="_blank"
+                        class="text-brand-blue font-bold border border-brand-blue px-4 py-2 rounded-full">
                         開始使用
                     </a>
                 </div>
@@ -114,7 +140,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <div class="lg:w-1/2 text-center lg:text-left">
-                    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 border border-blue-100 text-brand-blue font-bold text-sm tracking-wide uppercase">
+                    <div
+                        class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 border border-blue-100 text-brand-blue font-bold text-sm tracking-wide uppercase">
                         ✨ 2026 備考黑科技
                     </div>
                     <h1 class="text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
@@ -126,10 +153,12 @@
                         拒絕無效刷題，透過戰力圖表與 AI 光速解析，<br class="hidden lg:block">幫你精準抓出盲點，把讀書變遊戲！
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="https://shuati.streamlit.app/" target="_blank" class="bg-brand-blue hover:bg-brand-darkblue text-white text-xl px-8 py-4 rounded-xl font-bold transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        <a href="https://shuati.streamlit.app/" target="_blank"
+                            class="bg-brand-blue hover:bg-brand-darkblue text-white text-xl px-8 py-4 rounded-xl font-bold transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                             🚀 免費開始刷題
                         </a>
-                        <a href="#comparison" class="bg-white border-2 border-gray-200 hover:border-brand-blue text-gray-700 hover:text-brand-blue text-xl px-8 py-4 rounded-xl font-bold transition flex items-center justify-center">
+                        <a href="#comparison"
+                            class="bg-white border-2 border-gray-200 hover:border-brand-blue text-gray-700 hover:text-brand-blue text-xl px-8 py-4 rounded-xl font-bold transition flex items-center justify-center">
                             查看 AI 解析範例
                         </a>
                     </div>
@@ -137,33 +166,40 @@
                 </div>
 
                 <div class="lg:w-1/2 relative">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/20 rounded-full blur-3xl -z-10"></div>
-                    <img src="static/robothero.png" alt="刷題機 AI 機器人" class="w-full max-w-lg mx-auto drop-shadow-2xl animate-float">
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/20 rounded-full blur-3xl -z-10">
+                    </div>
+                    <img src="static/robothero.png" alt="刷題機 AI 機器人"
+                        class="w-full max-w-lg mx-auto drop-shadow-2xl animate-float">
                 </div>
             </div>
         </div>
     </section>
 
-<section id="comparison" class="py-24 bg-brand-light">
+    <section id="comparison" class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">為什麼學霸都愛用？<br>因為詳解真的 <span class="text-brand-blue">不一樣</span>。</h2>
+                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">為什麼學霸都愛用？<br>因為詳解真的 <span
+                        class="text-brand-blue">不一樣</span>。</h2>
                 <p class="text-2xl text-gray-600 font-medium">別的題庫只給你「答案」，我們給你「理解」。</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-stretch">
-                <div class="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm flex flex-col justify-center opacity-80 hover:opacity-100 transition duration-300">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm flex flex-col justify-center opacity-80 hover:opacity-100 transition duration-300">
                     <div class="flex items-center gap-3 mb-6">
                         <span class="text-4xl">🥱</span>
                         <h3 class="text-2xl font-bold text-gray-500">傳統題庫詳解</h3>
                     </div>
-                    <div class="space-y-6 font-mono text-lg text-gray-600 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div
+                        class="space-y-6 font-mono text-lg text-gray-600 bg-gray-50 p-8 rounded-2xl border border-gray-100">
                         <div>
                             <p class="text-sm text-gray-400 mb-1">題目</p>
                             <p class="font-bold">植物光合作用的主要產物是什麼？</p>
                         </div>
 
-                        <div class="flex items-center gap-2 text-red-500 bg-red-50 p-3 rounded-lg border border-red-100">
+                        <div
+                            class="flex items-center gap-2 text-red-500 bg-red-50 p-3 rounded-lg border border-red-100">
                             <span>❌</span>
                             <span>你的答案：A (葡萄糖)</span>
                         </div>
@@ -178,13 +214,16 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border-4 border-brand-blue/20 shadow-2xl transform md:-translate-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-brand-orange text-white px-6 py-2 rounded-bl-2xl text-lg font-bold shadow-sm z-10">
+                <div
+                    class="bg-white p-8 rounded-3xl border-4 border-brand-blue/20 shadow-2xl transform md:-translate-y-4 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-brand-orange text-white px-6 py-2 rounded-bl-2xl text-lg font-bold shadow-sm z-10">
                         🏆 AI 導師模式
                     </div>
 
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-4xl shadow-inner border-2 border-white">
+                        <div
+                            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-4xl shadow-inner border-2 border-white">
                             🤖
                         </div>
                         <div>
@@ -235,13 +274,151 @@
             </div>
         </div>
     </section>
+
+    <section id="thinking-guide" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div
+                    class="inline-block px-4 py-1.5 mb-4 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 font-bold text-sm tracking-wide uppercase">
+                    🚀 獨家首創功能
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">
+                    遇到難題？<br>開啟 <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">思路導航</span>
+                    帶你破關
+                </h2>
+                <p class="text-2xl text-gray-600 font-medium">
+                    別的平台直接給你答案，我們教你「怎麼想」。<br>
+                    就像身邊坐了一位頂尖家教，一步步引導你拆解題目。
+                </p>
+            </div>
+
+            <!-- Content Split -->
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left: Text Features -->
+                <div class="lg:w-1/2 space-y-8">
+                    <!-- Feature 1 -->
+                    <div class="flex gap-4">
+                        <div
+                            class="mt-1 w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                            🧩
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">題目拆解術</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                面對長篇大論的素養題不知所措？<br>
+                                AI 幫你把題目切分成關鍵資訊，找出隱藏的考點。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex gap-4">
+                        <div
+                            class="mt-1 w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                            💡
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">蘇格拉底式引導</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                不直接破梗，而是透過提問引發你的思考。<br>
+                                真正的理解，是自己想通的那一刻。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex gap-4">
+                        <div
+                            class="mt-1 w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                            🗺️
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">思維路徑圖</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                將解題過程視覺化，建立清晰的邏輯路徑。<br>
+                                下次遇到類似題型，這條路你已經走過了。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Mockup -->
+                <div class="lg:w-1/2 relative">
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-10 -right-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl"></div>
+
+                    <!-- Card UI -->
+                    <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 relative z-10">
+                        <!-- Chat Header -->
+                        <div class="flex items-center gap-3 border-b border-gray-100 pb-4 mb-4">
+                            <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                            <div class="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                            <div class="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
+                            <span class="text-xs text-gray-400 font-mono ml-auto">Thinking Guide v2.0</span>
+                        </div>
+
+                        <!-- Chat Items -->
+                        <div class="space-y-4">
+                            <!-- User Step -->
+                            <div class="flex gap-3 justify-end">
+                                <div class="bg-indigo-600 text-white px-4 py-2 rounded-2xl rounded-tr-none text-sm">
+                                    這題物理題好難，我卡在摩擦力那邊... 😫
+                                </div>
+                            </div>
+
+                            <!-- AI Step 1 -->
+                            <div class="flex gap-3">
+                                <div
+                                    class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center text-sm shrink-0">
+                                    🤖</div>
+                                <div
+                                    class="bg-gray-50 border border-gray-100 px-4 py-3 rounded-2xl rounded-tl-none text-sm text-gray-700">
+                                    別急！我們先畫出受力分析圖。<br>
+                                    <span class="font-bold text-indigo-600">Q: 物體在斜面上滑動時，除了重力，還受到哪兩個力的作用？</span>
+                                </div>
+                            </div>
+
+                            <!-- User Step 2 -->
+                            <div class="flex gap-3 justify-end">
+                                <div class="bg-indigo-600 text-white px-4 py-2 rounded-2xl rounded-tr-none text-sm">
+                                    正向力和摩擦力？
+                                </div>
+                            </div>
+
+                            <!-- AI Step 2 -->
+                            <div class="flex gap-3">
+                                <div
+                                    class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center text-sm shrink-0">
+                                    🤖</div>
+                                <div
+                                    class="bg-gray-50 border border-gray-100 px-4 py-3 rounded-2xl rounded-tl-none text-sm text-gray-700">
+                                    <span class="text-green-600 font-bold">Bingo! 🎉</span><br>
+                                    那摩擦力的方向應該是？試著用動摩擦力的公式寫出來...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Element -->
+                        <button
+                            class="mt-6 w-full py-2 bg-indigo-50 text-indigo-600 rounded-lg text-sm font-bold border border-indigo-200 hover:bg-indigo-100 transition">
+                            繼續引導 ⬇️
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="gamification" class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-1/2">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full blur-[100px] opacity-20"></div>
-                        <img src="static/evolution2.png" alt="角色進化" class="relative z-10 w-full drop-shadow-xl rounded-2xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full blur-[100px] opacity-20">
+                        </div>
+                        <img src="static/evolution2.png" alt="角色進化"
+                            class="relative z-10 w-full drop-shadow-xl rounded-2xl">
                     </div>
                 </div>
                 <div class="lg:w-1/2">
@@ -253,21 +430,27 @@
                     </p>
                     <ul class="space-y-8">
                         <li class="flex items-center gap-5">
-                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">🐣</div>
+                            <div
+                                class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">
+                                🐣</div>
                             <div>
                                 <h4 class="font-bold text-2xl text-gray-900 mb-1">角色養成系統</h4>
                                 <p class="text-lg text-gray-500">累積 XP 經驗值，解鎖不同型態的 AI 夥伴。</p>
                             </div>
                         </li>
                         <li class="flex items-center gap-5">
-                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">🏆</div>
+                            <div
+                                class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">
+                                🏆</div>
                             <div>
                                 <h4 class="font-bold text-2xl text-gray-900 mb-1">成就獎盃櫃</h4>
                                 <p class="text-lg text-gray-500">「連勝狂人」、「博學多聞」，收集徽章證明你的努力。</p>
                             </div>
                         </li>
                         <li class="flex items-center gap-5">
-                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">🔥</div>
+                            <div
+                                class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-3xl shadow-sm shrink-0">
+                                🔥</div>
                             <div>
                                 <h4 class="font-bold text-2xl text-gray-900 mb-1">連勝挑戰</h4>
                                 <p class="text-lg text-gray-500">每天刷題保持連勝，培養不間斷的學習習慣。</p>
@@ -282,7 +465,8 @@
     <section class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">拒絕無效刷題，<span class="text-brand-blue">數據</span> 幫你抓弱點</h2>
+                <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">拒絕無效刷題，<span
+                        class="text-brand-blue">數據</span> 幫你抓弱點</h2>
                 <p class="text-2xl text-gray-600 font-medium">不要用戰術上的勤奮，掩蓋戰略上的懶惰。<br>五維分析，直擊弱項。</p>
             </div>
 
@@ -307,20 +491,24 @@
                         </div>
                     </div>
                     <div class="order-1 lg:order-2">
-                        <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white transform transition hover:scale-[1.02] duration-500">
+                        <div
+                            class="rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white transform transition hover:scale-[1.02] duration-500">
                             <div class="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
                                 <div class="flex gap-1.5">
                                     <div class="w-3 h-3 rounded-full bg-red-400"></div>
                                     <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
                                     <div class="w-3 h-3 rounded-full bg-green-400"></div>
                                 </div>
-                                <div class="ml-4 bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400 flex-1 text-center font-mono shadow-sm">
+                                <div
+                                    class="ml-4 bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400 flex-1 text-center font-mono shadow-sm">
                                     shuati.tw/dashboard
                                 </div>
                             </div>
                             <div class="relative group">
                                 <img src="static/dashboard.png" alt="學習數據儀表板" class="w-full">
-                                <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"></div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -331,13 +519,14 @@
 
     <section id="srs" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-40 pointer-events-none">
-             <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl"></div>
-             <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-light rounded-full blur-3xl"></div>
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-light rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <div class="inline-block px-4 py-1.5 mb-4 rounded-full bg-red-50 border border-red-100 text-red-500 font-bold text-sm tracking-wide uppercase">
+                <div
+                    class="inline-block px-4 py-1.5 mb-4 rounded-full bg-red-50 border border-red-100 text-red-500 font-bold text-sm tracking-wide uppercase">
                     🧠 腦科學學習法
                 </div>
                 <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -364,8 +553,11 @@
                         <p class="text-right text-sm text-gray-400 mt-2 font-mono">⚠️ 3 天後的記憶殘留量：< 30%</p>
                     </div>
 
-                    <div class="bg-gradient-to-br from-brand-blue to-brand-darkblue p-8 rounded-3xl shadow-xl text-white relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-10 -mt-10 transition transform group-hover:scale-125 duration-700"></div>
+                    <div
+                        class="bg-gradient-to-br from-brand-blue to-brand-darkblue p-8 rounded-3xl shadow-xl text-white relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-10 -mt-10 transition transform group-hover:scale-125 duration-700">
+                        </div>
 
                         <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
                             <span class="text-3xl">🛡️</span> 記憶守門員 (SRS)
@@ -376,11 +568,15 @@
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-center gap-4">
-                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm backdrop-blur-sm">⏳</div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm backdrop-blur-sm">
+                                    ⏳</div>
                                 <span class="text-lg font-medium">自動計算最佳複習間隔 (1天, 3天, 7天...)</span>
                             </li>
                             <li class="flex items-center gap-4">
-                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm backdrop-blur-sm">🔔</div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm backdrop-blur-sm">
+                                    🔔</div>
                                 <span class="text-lg font-medium">主動 Email / 推播喚醒記憶，不必自己排程</span>
                             </li>
                         </ul>
@@ -388,22 +584,27 @@
                 </div>
 
                 <div class="space-y-8 relative">
-                     <div class="absolute inset-0 bg-brand-light rounded-full filter blur-3xl opacity-50 -z-10"></div>
+                    <div class="absolute inset-0 bg-brand-light rounded-full filter blur-3xl opacity-50 -z-10"></div>
 
-                     <div class="bg-white rounded-3xl shadow-xl p-4 border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-300">
-                        <div class="aspect-w-16 aspect-h-10 bg-gray-50 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300 relative overflow-hidden group">
-                            <img src="static/srs2.png" alt="遺忘曲線對比圖" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div
+                        class="bg-white rounded-3xl shadow-xl p-4 border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-300">
+                        <div
+                            class="aspect-w-16 aspect-h-10 bg-gray-50 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300 relative overflow-hidden group">
+                            <img src="static/srs2.png" alt="遺忘曲線對比圖"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                         </div>
                         <div class="flex justify-between items-center mt-4 px-2">
                             <p class="text-gray-500 font-medium">🧠 科學複習 vs 自然遺忘</p>
                             <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">效率提升 300%</span>
                         </div>
-                     </div>
+                    </div>
 
-                     <div class="flex justify-end -mt-16 mr-4 lg:mr-12 relative z-20">
-                        <div class="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-4 border border-gray-100 w-80 transform -rotate-2 hover:rotate-0 transition duration-300 animate-float">
+                    <div class="flex justify-end -mt-16 mr-4 lg:mr-12 relative z-20">
+                        <div
+                            class="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-4 border border-gray-100 w-80 transform -rotate-2 hover:rotate-0 transition duration-300 animate-float">
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-brand-orange rounded-xl flex items-center justify-center text-xl text-white shadow-md shrink-0">
+                                <div
+                                    class="w-10 h-10 bg-brand-orange rounded-xl flex items-center justify-center text-xl text-white shadow-md shrink-0">
                                     🔥
                                 </div>
                                 <div>
@@ -418,7 +619,7 @@
                                 </div>
                             </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -463,11 +664,15 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-yellow-50 rounded-full -mr-20 -mt-20 transition group-hover:scale-110 duration-500"></div>
+                <div
+                    class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-yellow-50 rounded-full -mr-20 -mt-20 transition group-hover:scale-110 duration-500">
+                    </div>
 
                     <div class="relative z-10">
-                        <div class="w-20 h-20 bg-yellow-100 rounded-2xl flex items-center justify-center text-5xl mb-8 shadow-sm">
+                        <div
+                            class="w-20 h-20 bg-yellow-100 rounded-2xl flex items-center justify-center text-5xl mb-8 shadow-sm">
                             🏆
                         </div>
                         <h3 class="text-3xl font-bold text-gray-900 mb-4">校際爭霸排行榜</h3>
@@ -476,17 +681,22 @@
                             全台高中職、國中同步連線，即時更新戰況。<br>
                             <span class="text-brand-orange font-bold block mt-2">快來看看你的學校現在排第幾？</span>
                         </p>
-                        <div class="flex items-center text-brand-orange font-bold text-lg group-hover:translate-x-2 transition">
+                        <div
+                            class="flex items-center text-brand-orange font-bold text-lg group-hover:translate-x-2 transition">
                             為校而戰 <span class="ml-2">→</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full -mr-20 -mt-20 transition group-hover:scale-110 duration-500"></div>
+                <div
+                    class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full -mr-20 -mt-20 transition group-hover:scale-110 duration-500">
+                    </div>
 
                     <div class="relative z-10">
-                        <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-5xl mb-8 shadow-sm">
+                        <div
+                            class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-5xl mb-8 shadow-sm">
                             💬
                         </div>
                         <h3 class="text-3xl font-bold text-gray-900 mb-4">同學討論區</h3>
@@ -495,7 +705,8 @@
                             分享速解法、查看別人思路，或是單純吐苦水。<br>
                             <span class="text-brand-blue font-bold block mt-2">學習路上有伴，走得更遠。</span>
                         </p>
-                        <div class="flex items-center text-brand-blue font-bold text-lg group-hover:translate-x-2 transition">
+                        <div
+                            class="flex items-center text-brand-blue font-bold text-lg group-hover:translate-x-2 transition">
                             加入討論 <span class="ml-2">→</span>
                         </div>
                     </div>
@@ -505,13 +716,15 @@
     </section>
 
     <section class="py-24 bg-brand-blue text-white text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
         <div class="max-w-4xl mx-auto px-4 relative z-10">
             <h2 class="text-4xl lg:text-6xl font-black mb-10">準備好開始進化了嗎？</h2>
             <p class="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
                 現在加入封測，立即領取你的專屬 AI 夥伴。收錄歷屆學測、會考、分科測驗試題，完全免費。
             </p>
-            <a href="https://shuati.streamlit.app/" target="_blank" class="bg-white text-brand-blue text-2xl px-12 py-6 rounded-full font-black shadow-2xl hover:bg-gray-50 hover:scale-105 transition duration-300 inline-flex items-center gap-4">
+            <a href="https://shuati.streamlit.app/" target="_blank"
+                class="bg-white text-brand-blue text-2xl px-12 py-6 rounded-full font-black shadow-2xl hover:bg-gray-50 hover:scale-105 transition duration-300 inline-flex items-center gap-4">
                 <span class="text-3xl">🚀</span> 立即註冊 (免費)
             </a>
             <p class="mt-8 text-base text-blue-200 opacity-80">Join 500+ students learning smarter today.</p>
@@ -519,7 +732,8 @@
     </section>
 
     <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <h3 class="text-white text-xl font-bold mb-2">🚀 刷題機 Shuati</h3>
                 <p class="text-base">你的 AI 隨身家教，陪你戰勝每一場考試。</p>
@@ -536,4 +750,5 @@
     </footer>
 
 </body>
+
 </html>
