@@ -559,29 +559,64 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mb-6">拒絕無效刷題，<span
-                        class="text-brand-blue">數據</span> 幫你抓弱點</h2>
-                <p class="text-2xl text-gray-600 font-medium">不要用戰術上的勤奮，掩蓋戰略上的懶惰。<br>五維分析，直擊弱項。</p>
+                        class="text-brand-blue">AI</span> 幫你抓病灶</h2>
+                <p class="text-2xl text-gray-600 font-medium">不要用戰術上的勤奮，掩蓋戰略上的懶惰。<br>不是你不會，是還沒找到「根本原因」。</p>
             </div>
 
             <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 border border-gray-100">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-6">📊 視覺化學習歷程</h3>
-                        <p class="text-gray-600 mb-8 text-xl leading-relaxed">
-                            透過最新的<strong>「學習熱力圖」</strong>檢視你的堅持，利用<strong>「戰力雷達圖」</strong>找出你的弱科。
-                            <br><br>
-                            我們不只記錄你做對了幾題，更幫你分析：
-                        </p>
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="bg-blue-50 p-6 rounded-2xl">
-                                <p class="font-bold text-brand-blue text-2xl mb-2">🕸️ 弱點偵測</p>
-                                <p class="text-lg text-gray-600">哪一科偏弱？一目了然。</p>
-                            </div>
-                            <div class="bg-green-50 p-6 rounded-2xl">
-                                <p class="font-bold text-green-600 text-2xl mb-2">📈 成長軌跡</p>
-                                <p class="text-lg text-gray-600">看見每天的進步，建立信心。</p>
+                    <div class="order-2 lg:order-1 space-y-12">
+
+                        <!-- Part 1: Visual Data -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                                <span class="bg-blue-100 p-2 rounded-lg text-2xl">�</span> 視覺化學習歷程
+                            </h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                透過<strong>「學習熱力圖」</strong>檢視你的堅持，利用<strong>「戰力雷達圖」</strong>找出你的弱科。
+                                我們不只記錄你做對了幾題，更幫你分析：
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                    <p class="font-bold text-brand-blue text-lg mb-1">🕸️ 弱點偵測</p>
+                                    <p class="text-sm text-gray-500">哪一科偏弱？一目了然。</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                    <p class="font-bold text-green-600 text-lg mb-1">📈 成長軌跡</p>
+                                    <p class="text-sm text-gray-500">看見每天的進步，建立信心。</p>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Divider -->
+                        <div class="border-t border-gray-100"></div>
+
+                        <!-- Part 2: AI Diagnosis -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                                <span class="bg-purple-100 p-2 rounded-lg text-2xl">🕵️‍♂️</span> AI 深度健檢報告 (MVP)
+                            </h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                這不只是一份成績單，這是你的<strong>私人診療書</strong>。
+                                AI 啟動「逆向推理引擎」，分析你每一次選錯的理由。
+                            </p>
+
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span class="text-gray-700"><strong>逆向推理</strong>：為何選 A 而不是 B？</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                    <span class="text-gray-700"><strong>根本原因</strong>：粗心還是觀念誤區？</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                    <span class="text-gray-700"><strong>行動處方</strong>：3 個關鍵字立即複習。</span>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                     <div class="order-1 lg:order-2">
                         <div
@@ -594,13 +629,21 @@
                                 </div>
                                 <div
                                     class="ml-4 bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400 flex-1 text-center font-mono shadow-sm">
-                                    shuati.tw/dashboard
+                                    shuati.tw/vip/diagnosis
                                 </div>
                             </div>
                             <div class="relative group">
-                                <img src="static/dashboard.png" alt="學習數據儀表板" class="w-full">
+                                <img src="static/dashboard.png" alt="AI 深度健檢報告" class="w-full">
                                 <div
-                                    class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none">
+                                    class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent pointer-events-none">
+                                </div>
+                                <!-- Floating Badge -->
+                                <div
+                                    class="absolute bottom-6 right-6 bg-white/95 backdrop-blur px-4 py-3 rounded-xl shadow-lg border border-gray-100 animate-bounce">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                        <span class="font-bold text-gray-800">AI 診斷生成中...</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
