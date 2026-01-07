@@ -842,6 +842,50 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                // 1. Get code from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                let code = urlParams.get('code');
+
+                // 2. Fallback to localStorage (or save new code)
+                if (code) {
+                    try {
+                        localStorage.setItem('referral_code', code);
+                    } catch (e) {
+                        console.warn('LocalStorage not available');
+                    }
+                } else {
+                    try {
+                        code = localStorage.getItem('referral_code');
+                    } catch (e) { }
+                }
+
+                // 3. Update all CTA links
+                if (code) {
+                    console.log('MGM Activated. Code:', code);
+                    const links = document.querySelectorAll('a');
+
+                    links.forEach(a => {
+                        const href = a.getAttribute('href');
+                        // Target only the app links
+                        if (href && href.includes('app.shuati.tw')) {
+                            try {
+                                const url = new URL(a.href); // Use full resolved property
+                                url.searchParams.set('code', code);
+                                a.href = url.toString();
+                            } catch (err) {
+                                console.error('Invalid URL:', a.href);
+                            }
+                        }
+                    });
+                }
+            } catch (e) {
+                console.error('MGM Script Error:', e);
+            }
+        });
+    </script>
 </body>
 
 </html>
