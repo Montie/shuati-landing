@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Remotion render output
+remotion-videos/out/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

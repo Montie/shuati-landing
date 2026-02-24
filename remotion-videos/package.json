@@ -1,0 +1,28 @@
+{
+  "name": "remotion-videos",
+  "version": "1.0.0",
+  "description": "刷題王 Marketing Videos - Scene 3 & 4 Motion Graphics",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "npx remotion studio src/index.ts",
+    "render:cards": "npx remotion render src/index.ts Scene3-ExamCards out/scene3-exam-cards.mp4",
+    "render:paper": "npx remotion render src/index.ts Scene3-PaperToDigital out/scene3-paper-to-digital.mp4",
+    "render:outro": "npx remotion render src/index.ts Scene4-BrandOutro out/scene4-brand-outro.mp4",
+    "render:full": "npx remotion render src/index.ts EP4-Scene3and4 out/ep4-scene3-and-4.mp4",
+    "render:all": "npm run render:cards && npm run render:paper && npm run render:outro && npm run render:full"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.427",
+    "@remotion/cli": "^4.0.427",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.427",
+    "typescript": "^5.9.3"
+  }
+}
